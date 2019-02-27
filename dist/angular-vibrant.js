@@ -74,6 +74,7 @@ function $vibrantProvider() {
         vibrant.get = function(url, colors, quality) {
             return $q(function(resolve, reject) {
                 var pic = $document[0].createElement('img');
+                pic.setAttribute("crossOrigin", "anonymous");
                 pic.src = url;
                 $document.find('body').append(pic);
                 var element = angular.element(pic);
